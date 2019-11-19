@@ -4,20 +4,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>TapSearch</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
 
 </head>
 <body>
     <h1 class="head">TapSearch</h1>
     <p>Search Engine for words!</p>
     <p> Type the paragraph and word you want to search for!</p>
+
+
     <form action="">
-    <textarea placeholder="Type your paragraph here!" cols="100" rows="15"></textarea>
+    <textarea id="text" placeholder="Type your paragraph here!" cols="100" rows="15"></textarea>
     <div class="search-bar">
-         <input type="text" placeholder="Search..">
-         <button type="submit">SEARCH</button>
+         <input id="search_query" type="text" placeholder="Search... for example 'index' ">
+        {% csrf_token %}
+
+
     </div>
     </form>
+
+
+    <p id="result" style="font-size: 25px;"></p>
+    <script
+          src="https://code.jquery.com/jquery-3.4.1.js"
+          integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+          crossorigin="anonymous"></script>
+    <script>
+
+
+        <!--    AJAX request of the form    -->
+        $("#search_query").keyup(function(){
+            $("#result").hide();
+        data = {
+                "text" : $("#text").val(),
+                "query" : $("#search_query").val(),
+                "csrfmiddlewaretoken" : $("input[name=csrfmiddlewaretoken]").val()
+            }
+            console.log(data)
+            if(data.query != ""){
+
+                $.ajax({
+                url: "/tapsearch/data",
+                type: "POST",
+                data: data,
+                success: function(response){
+                    $("#result").show();
+
+                    document.getElementById("result").innerHTML = ""
+                    for (var i = 0; i < response.data.length; i++) {
+                         document.getElementById("result").innerHTML += response.data[i]+"<br><br>"
+                    }
+
+
+                }
+            });
+
+
+            }
+
+        });
+    </script>
 </body>
 </html>
