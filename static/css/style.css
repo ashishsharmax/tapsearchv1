@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+
+html{
+    background: #8E0E00;
+    background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);
+    background: linear-gradient(to right, #1F1C18, #8E0E00);
+    overflow:hidden;
+
+}
+
+.head{
+    text-align: center;
+    font-family: 'Alata', sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
+p{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+.search-bar{
+    position: relative;
+    left: 310px;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+input{
+    padding: 0.3%;
+    font-size: 20px;
+    width: 55.4%;
+    margin-top: 15px;
+}
+button{
+        padding: 0.3%;
+    font-size: 20px;
+    width: 10%;
+}

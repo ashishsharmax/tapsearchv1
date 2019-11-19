@@ -5,11 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-    <link href="{% static 'css/style.css' %}">
 </head>
 <body>
-<p>{{ name }}</p>
-
+    <h1 class="head">TapSearch</h1>
+    <p>Search Engine for words!</p>
+    <p> Type the paragraph and word you want to search for!</p>
+    <form action="">
+    <textarea placeholder="Type your paragraph here!" cols="100" rows="15"></textarea>
+    <div class="search-bar">
+         <input type="text" placeholder="Search..">
+         <button type="submit">SEARCH</button>
+    </div>
+    </form>
 </body>
 </html>
