@@ -38,7 +38,7 @@ def data(request):
         for i in range(len(paragraphs)):
             temp = {
                 "id" : i+1,
-                "text" : paragraphs[i]
+                "text" : paragraphs[i].lower()
             }
             contexts.append(temp)
 
@@ -48,7 +48,7 @@ def data(request):
         for context in contexts:
             index.index_document(context)
 
-        search_term = query
+        search_term = query.lower()
         result = index.lookup_query(search_term)
         answer = list()
 
