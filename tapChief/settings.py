@@ -17,7 +17,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['XXX.herokuapp.com', 'localhost', '127.0.0.1', 'tapsearchv']
 STATICFILES_DIRS = [STATIC_DIR,]
 
 # Quick-start development settings - unsuitable for production
