@@ -17,7 +17,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 STATICFILES_DIRS = [STATIC_DIR,]
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +29,7 @@ SECRET_KEY = 'npsokl$11a)x%d*x^m-!8=uw7pg!jd*==nv%at^ud@^_tz9cul'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
